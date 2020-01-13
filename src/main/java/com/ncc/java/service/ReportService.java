@@ -18,7 +18,7 @@ public interface ReportService {
      *
      * @return the list of entities.
      */
-//    List<ReportDTO> findAll();
+   List<ReportDTO> findAll();
 
 
     /**

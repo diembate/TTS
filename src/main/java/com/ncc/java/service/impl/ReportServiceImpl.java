@@ -58,8 +58,6 @@ public class ReportServiceImpl implements ReportService {
     }
 
 
-
-
     /**
      * Get one report by id.
      *
@@ -77,7 +75,7 @@ public class ReportServiceImpl implements ReportService {
     @Override
     public List<ReportDTO> getListReport() {
         List<ReportDTO> reportDTOS = new ArrayList<>();
-//list product
+        //list product
         List<Product> products = productRepository.findAll();
         //duyet mang produt
         for (Product product : products) {
@@ -87,19 +85,31 @@ public class ReportServiceImpl implements ReportService {
             for (OrderDetailInfo orderDetailInfo : orderDetailInfos) {
                 total += orderDetailInfo.getQuantityOrder();
             }
- //set gt
-
+            //tao 1 report
             ReportDTO reportDTO = new ReportDTO();
+            //set gt
             reportDTO.setId(product.getId());
             reportDTO.setOrderQuantityOfProduct(total);
             reportDTO.setProductName(product.getProductName());
             reportDTO.setQuantityRemaining(product.getQuantityProduct());
+            //add vao list report
             reportDTOS.add(reportDTO);
         }
-
 
         return reportDTOS;
     }
 
 
+
+
+
+
+
+
+
+    @Override
+    public List<ReportDTO> findAll() {
+return  null;
+    }
 }
+

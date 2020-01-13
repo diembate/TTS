@@ -14,9 +14,10 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface OrderDetailInfoRepository extends JpaRepository<OrderDetailInfo, Long> {
+
 //    @Query(value=" SELECT SUM(quantityOrder)" +
-//        "    FROM report" +
-//        "    GROUP BY productName ")
+//        "    FROM orderDetailInfo" +
+//        "    GROUP BY productId ")
 
     List<OrderDetailInfo> findAllByProductId(long id);
 
